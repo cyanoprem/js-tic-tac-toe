@@ -1,0 +1,41 @@
+#nav {
+  text-align: center;
+}
+
+#reset-btn {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.x-o-box {
+  text-align: center;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 4rem 4rem 4rem;
+  margin-left: 41%;
+  margin-right: 41%;
+}
+
+@media only screen and (max-width: 900px) {
+  #game-board {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 4rem 4rem 4rem;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #game-board {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 4rem 4rem 4rem;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
