@@ -2,7 +2,7 @@ const buttons = document.querySelectorAll('button')
 let currentPlayer = 'X'
 let resetBtn = document.getElementById('reset-btn')
 let gameStatus = document.getElementById('game-status')
-
+let gameOver = false
 
 const changePlayer = () => {
   if (currentPlayer === 'X') {
@@ -27,6 +27,7 @@ const resetGame = () => {
   }
   currentPlayer = 'X'
   gameStatus.innerText = 'Current Player : X'
+  gameOver = false
 }
 
 const isWon = () => {
@@ -34,16 +35,19 @@ const isWon = () => {
   if (buttons[0].innerText !== '') {
     console.log(0)
     if (buttons[0].innerText === buttons[1].innerText && buttons[0].innerText === buttons[2].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[0].innerText} is the winner`)
         resetGame()
       })
     } else if (buttons[0].innerText === buttons[3].innerText && buttons[0].innerText === buttons[6].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[0].innerText} is the winner`)
         resetGame()
       })
     } else if (buttons[0].innerText === buttons[4].innerText && buttons[0].innerText === buttons[8].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[0].innerText} is the winner`)
         resetGame()
@@ -53,6 +57,7 @@ const isWon = () => {
 
   if (buttons[1].innerText !== '') {
     if (buttons[1].innerText === buttons[4].innerText && buttons[1].innerText === buttons[7].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[1].innerText} is the winner`)
         resetGame()
@@ -62,11 +67,13 @@ const isWon = () => {
 
   if (buttons[2].innerText !== '') {
     if (buttons[2].innerText === buttons[4].innerText && buttons[2].innerText === buttons[6].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[2].innerText} is the winner`)
         resetGame()
       })
     } else if (buttons[2].innerText === buttons[5].innerText && buttons[2].innerText === buttons[8].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[2].innerText} is the winner`)
         resetGame()
@@ -76,6 +83,7 @@ const isWon = () => {
 
   if (buttons[3].innerText !== '') {
     if (buttons[3].innerText === buttons[4].innerText && buttons[3].innerText === buttons[5].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[3].innerText} is the winner`)
         resetGame()
@@ -85,6 +93,7 @@ const isWon = () => {
 
   if (buttons[6].innerText !== '') {
     if (buttons[6].innerText === buttons[7].innerText && buttons[6].innerText === buttons[8].innerText) {
+      gameOver = true
       setTimeout(() => {
         alert(`${buttons[6].innerText} is the winner`)
         resetGame()
@@ -98,7 +107,7 @@ const isWon = () => {
       count += 1
     }
   }
-  if (count === 9) {
+  if (count === 9 && gameOver === false) {
     setTimeout(() => {
       alert('Draw')
       resetGame()
